@@ -31,7 +31,9 @@
                     'Content-type': 'application/json',
                 },
             })).json();
-            console.log(this.responsedata);
+            if (this.responsedata['code'] != this.code) {
+                 console.log(this.responsedata);
+            }
         },
     }">
         <label>Code:</label><input type="text" x-model="code"><br>
