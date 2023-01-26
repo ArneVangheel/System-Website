@@ -31,6 +31,7 @@
                     'Content-type': 'application/json',
                 },
             })).json();
+            console.log(this.responsedata['code'])
             if (this.responsedata['code'] != None) {
                  alert('Code is aangemaakt')
             }
