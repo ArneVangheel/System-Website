@@ -1,43 +1,23 @@
-.sidenav {
-    height : 100%;
-    width : 200px;
-    position : fixed;
-    z-index : 1;
-    top : 0;
-    left : 0;
-    background-color : #3949ab;
-    overflow-x : hidden;
-    padding-top : 20px;
-    padding : 5px;
-}
-.sidenav a {
-    padding : 6px 8px 6px 16px;
-    text-decoration : none;
-    font-size : 25px;
-    color : white;
-    display : block;
-}
-.sidenav a:hover {
-    background-color : #312e81;
-    border-radius : 10px;
-}
-body {
-    background-color : white;
-}
-.main {
-    margin-left : 200px;
-    font-size : 28px;
-    padding : 10px;
+body{
+    background-color: #d9edfc;
 }
 
-@media screen and (max-height: 450px) {
-    .sidenav {
-        padding-top : 15px;
-    }
-    .sidenav a {
-        font-size : 18px;
-    }
-    thead {
-        background-color: #f9fafb;
-    }
+.container{
+    background-color: #d9edfc;
+    height: 100vh;
+}
+.navbar-custom {
+    background-color: #3949ab;
+}
+.custom-toggler.navbar-toggler {
+    border-color: #3949ab;
+    color: #6374e0;
+}
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg%27%3E%3Cpath stroke='rgba(255,255,255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: white;
 }
