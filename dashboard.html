@@ -41,6 +41,24 @@
         <label>Aantal:</label><input type="number" x-model="aantal"><br>
         <button x-on:click="callmethod1">Maak Code</button>
     </div>
+    <h4>Verwijder een code</h4>
+    <div x-data="{
+        responsedata: null,
+        code: null,
+        async callmethod2() {
+            this.responsedata = await (await fetch('https://api-ensa-arnevangheel.cloud.okteto.net/code' + this.code,
+            {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': 'Bearer ' + localStorage.getItem('token'),
+                    'Content-type': 'application/json',
+                },
+            })).json();
+        },
+    }">
+        <label>Code:</label><input type="text" x-model="code"><br>
+        <button x-on:click="callmethod2">Verwijder Code</button>
+    </div>
 </div>
 </body>
 </html>
