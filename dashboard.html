@@ -59,11 +59,19 @@
                     'Content-type': 'application/json',
                 },
             })).json();
-            console.log(this.responsedata);
+            if (this.responsedata['detail'] == 'There is no Code registered') {
+                alert('Deze code bestaat niet.');
+            }
+            else if (this.responsedata['detail'] == 'The code has been deleted') {
+                alert('De code is verwijderd.');
+            }
+            else {
+                alert('Er is een fout opgetreden bij het verwijderen van de code')
+            }
         },
     }">
         <label>Code:</label><input type="text" x-model="code"><br>
-        <button x-on:click="callmethod2">Verwijder Code</button>
+        <button x-on:click="callmethod2" x-init="getData">Verwijder Code</button>
     </div>
     <h4>Alle Codes</h4>
     <div x-data="{
