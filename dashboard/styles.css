@@ -21,3 +21,31 @@ body{
 .navbar-custom .navbar-text {
     color: white;
 }
+.nav-b {
+    color: black;
+}
+.nav-b:hover {
+    color: black;
+}
+
+.nav-active {
+    color: darkgrey;
+}
+
+/*Knoppen*/
+
+.background_button{
+    background-color: #3949ab;
+    color: white;
+    border: none;
+    height: 37px;
+    border-radius: 15px;
+    margin-top: 30px;
+    width: 250px;
+}
+
+.background_button:hover{
+    background-color: #6374e0;
+    border: 1px solid #6374e0;
+    color: black;
+}

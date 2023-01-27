@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-
 <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Brievenbus beheer</a>
@@ -23,10 +22,10 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="dashboard.html">Code Beheer</a>
+                        <a class="nav-link nav-active nav-b" href="dashboard.html">Code Beheer</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html" onclick="Logout()">Uitloggen</a>
+                        <a class="nav-link nav-b" href="index.html" onclick="Logout()">Uitloggen</a>
                     </li>
             </div>
         </div>
@@ -77,7 +76,7 @@
     }">
             <label>Code:</label><input type="text" x-model="code"><br>
             <label>Aantal:</label><input type="number" x-model="aantal"><br>
-            <button x-on:click="callmethod1">Maak Code</button>
+            <button class="background_button" x-on:click="callmethod1">Maak Code</button>
         </div>
         <br>
         <h4>Verwijder een code</h4>
@@ -105,7 +104,7 @@
         },
     }">
             <label>Code:</label><input type="text" x-model="code"><br>
-            <button x-on:click="callmethod2" x-init="getData">Verwijder Code</button>
+            <button class="background_button" x-on:click="callmethod2" x-init="getData">Verwijder Code</button>
         </div>
 
         <br>
@@ -125,7 +124,7 @@
             console.log(this.codes);
         }
     }">
-            <button x-on:click="getData" x-init="getData">Herlaad Codes</button>
+            <button class="background_button" x-on:click="getData" x-init="getData">Herlaad Codes</button>
             <table>
                 <thead>
                 <tr>
