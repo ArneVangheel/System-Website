@@ -46,7 +46,7 @@
         responsedata: null,
         code: null,
         async callmethod2() {
-            this.responsedata = await (await fetch('https://api-ensa-arnevangheel.cloud.okteto.net/code' + this.code,
+            this.responsedata = await (await fetch('https://api-ensa-arnevangheel.cloud.okteto.net/code/' + this.code,
             {
                 method: 'DELETE',
                 headers: {
@@ -59,6 +59,40 @@
         <label>Code:</label><input type="text" x-model="code"><br>
         <button x-on:click="callmethod2">Verwijder Code</button>
     </div>
+    <h4>Alle Codes</h4>
+    <div x-data="{
+            codes: [],
+            async getData() {
+                this.orders = await (await fetch('https://api-ensa-arnevangheel.cloud.okteto.net/code',
+            {
+                method: 'GET',
+                headers: {
+                    'Authorization': 'Bearer ' + localStorage.getItem('token'),
+                    'accept': 'application/json' ,
+                },
+            })).json();
+        }
+    }">
+        <button x-on:click="getData" x-init="getData">Herlaad Codes</button>
+        <table>
+            <thead>
+            <tr>
+                <th>Code</th>
+                <th>Aantal</th>
+            </tr>
+            </thead>
+            <tbody>
+            <template x-for="code in codes">
+                <tr>
+                    <td x-text="code.code"></td>
+                    <td x-text="code.uses"></td>
+                </tr>
+            </template>
+            </tbody>
+        </table>
+
+    </div>
+</div>
 </div>
 </body>
 </html>
