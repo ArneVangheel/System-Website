@@ -4,7 +4,7 @@ function Logout() {
 
 window.onload = function() {checkToken()};
 async function checkToken() {
-    this.responsedata = await (await fetch('https://api-eindproject-arnevangheel.cloud.okteto.net/users/me',
+    this.responsedata = await (await fetch('https://api-ensa-arnevangheel.cloud.okteto.net/users/me',
         {
             method: 'GET',
             headers: {
@@ -14,7 +14,7 @@ async function checkToken() {
         })).json();
     console.log(this.responsedata);
     if (this.responsedata["email"] == null) {
-        window.location.href = "https://api-eindproject.netlify.app/index.html";
+        window.location.href = "https://brievenbus.netlify.app/index.html";
         console.log("User not authenticated")
     }
 
